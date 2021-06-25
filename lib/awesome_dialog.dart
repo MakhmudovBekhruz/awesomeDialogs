@@ -167,22 +167,22 @@ class AwesomeDialog {
                     scale: 0.1,
                     fade: true,
                     curve: Curves.fastLinearToSlowEaseIn,
-                    child: _buildDialog);
+                    child: buildDialog);
 
               case AnimType.LEFTSLIDE:
-                return FadeIn(from: SlideFrom.LEFT, child: _buildDialog);
+                return FadeIn(from: SlideFrom.LEFT, child: buildDialog);
 
               case AnimType.RIGHSLIDE:
-                return FadeIn(from: SlideFrom.RIGHT, child: _buildDialog);
+                return FadeIn(from: SlideFrom.RIGHT, child: buildDialog);
 
               case AnimType.BOTTOMSLIDE:
-                return FadeIn(from: SlideFrom.BOTTOM, child: _buildDialog);
+                return FadeIn(from: SlideFrom.BOTTOM, child: buildDialog);
 
               case AnimType.TOPSLIDE:
-                return FadeIn(from: SlideFrom.TOP, child: _buildDialog);
+                return FadeIn(from: SlideFrom.TOP, child: buildDialog);
 
               default:
-                return _buildDialog;
+                return buildDialog;
             }
           }).then((_) {
         isDissmisedBySystem = true;
@@ -198,7 +198,7 @@ class AwesomeDialog {
     );
   }
 
-  Widget get _buildDialog => WillPopScope(
+  Widget get buildDialog => WillPopScope(
         onWillPop: _onWillPop,
         child: VerticalStackDialog(
           dialogBackgroundColor: dialogBackgroundColor,
